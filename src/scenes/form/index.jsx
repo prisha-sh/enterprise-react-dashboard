@@ -3,12 +3,18 @@ import { Formik } from "formik";
 import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "../../components/Header";
+import { useSnackbar } from "../../contexts/SnackbarContext";
+import { useTeam } from "../../contexts/TeamContext";
 
 const Form = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
+  const { showSnackbar } = useSnackbar();
+  const { addTeamMember } = useTeam();
 
-  const handleFormSubmit = (values) => {
-    console.log(values);
+  const handleFormSubmit = (values, { resetForm }) => {
+    addTeamMember(values);
+    showSnackbar(`Successfully added team member: ${values.firstName} ${values.lastName}`);
+    resetForm();
   };
 
   return (

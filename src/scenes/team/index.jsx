@@ -1,15 +1,16 @@
 import { Box, Typography, useTheme } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
-import { mockDataTeam } from "../../data/mockData";
 import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
 import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
 import Header from "../../components/Header";
+import { useTeam } from "../../contexts/TeamContext";
 
 const Team = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const { team } = useTeam();
   const columns = [
     { field: "id", headerName: "ID" },
     {
@@ -100,7 +101,7 @@ const Team = () => {
           },
         }}
       >
-        <DataGrid checkboxSelection rows={mockDataTeam} columns={columns} />
+        <DataGrid checkboxSelection rows={team} columns={columns} />
       </Box>
     </Box>
   );
