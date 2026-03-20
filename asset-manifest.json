@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/enterprise-react-dashboard/static/css/main.08ca7eda.css",
+    "main.js": "/enterprise-react-dashboard/static/js/main.0af200b4.js",
+    "index.html": "/enterprise-react-dashboard/index.html",
+    "main.08ca7eda.css.map": "/enterprise-react-dashboard/static/css/main.08ca7eda.css.map",
+    "main.0af200b4.js.map": "/enterprise-react-dashboard/static/js/main.0af200b4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.08ca7eda.css",
+    "static/js/main.0af200b4.js"
+  ]
+}
